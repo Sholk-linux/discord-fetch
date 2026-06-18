@@ -1,7 +1,6 @@
 # discord-fetch
 
-[ENG] Like `fastfetch`, but for your Discord status. Lightweight, fast, and fully customizable via TOML.
-[RU] Как `fastfetch`, но для твоего статуса в Дискорде. Легковесный, быстрый и полностью настраиваемый через TOML.
+Like `fastfetch`, but for your Discord status. Lightweight, fast, and fully customizable via TOML.
 
 ---
 

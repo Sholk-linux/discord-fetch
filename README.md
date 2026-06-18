@@ -75,7 +75,7 @@ For a complete breakdown of all config options, parameters, and manual overrides
 Полный разбор всех доступных настроек, параметров кастомизации вынесен в отдельный [Файл документации](DOCUMENTATION.md).
 
 ---
-## 🤝 Credits
+##  Credits
 Inspired by the original [dcfetch](https://github.com/tranarchy/dcfetch) project written in C.
 
 ---

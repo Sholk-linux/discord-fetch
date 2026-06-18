@@ -66,7 +66,7 @@ fn main() {
             .unwrap_or_else(|| "<unknown>".to_string()));
     //and shell
     let shell_name = config.shell_override
-        .unwrap_or_else(||get_shell::get_shell_name()
+        .unwrap_or_else(||query_shell::get_shell_name()
             .unwrap_or_else(|_| "<unknown>".to_string()));
     
     let sep = config.separator

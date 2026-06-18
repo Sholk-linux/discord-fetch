@@ -1,11 +1,11 @@
-# discord-fetch 🦀
+# discord-fetch
 
 [ENG] Like `fastfetch`, but for your Discord status. Lightweight, fast, and fully customizable via TOML.
 [RU] Как `fastfetch`, но для твоего статуса в Дискорде. Легковесный, быстрый и полностью настраиваемый через TOML.
 
 ---
 
-## 🖥️ Preview / Примеры
+##  Preview / Примеры
 
 | Fedora Workstation | EndeavourOS (Default) | Debian Stable |
 | :---: | :---: | :---: |
@@ -17,7 +17,7 @@
 
 `discord-fetch` is a modern CLI utility written in Rust. It automatically gathers information about your OS, Desktop Environment, and Shell, and displays it as your Discord activity. 
 
-### ⚙️ How to Build & Run
+###  How to Build & Run
 1. Make sure you have the[Rust toolchain installed](https://rust-lang.org/).
 2. Clone the repository and build the release binary:
    ```bash

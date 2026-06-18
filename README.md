@@ -6,7 +6,7 @@ Like `fastfetch`, but for your Discord status. Lightweight, fast, and fully cust
 
 ##  Preview / Примеры
 
-| Fedora Workstation | EndeavourOS (Default) | Debian Stable |
+| Fedora Workstation | EndeavourOS | Debian Stable |
 | :---: | :---: | :---: |
 | <img src="screenshots/fedora.png" width="250"> | <img src="screenshots/endeavour.png" width="250"> | <img src="screenshots/debian.png" width="250"> |
 

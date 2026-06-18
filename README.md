@@ -76,7 +76,7 @@ For a complete breakdown of all config options, parameters, and manual overrides
 
 ---
 ## 🤝 Credits
-Inspired by the original [dcfetch](https://github . com/tranarchy/dcfetch) project written in C.
+Inspired by the original [dcfetch](https://github.com/tranarchy/dcfetch) project written in C.
 
 ---
 ##  License

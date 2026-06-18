@@ -97,6 +97,6 @@ fn main() {
                         .large_text(&large_text)
     })
         });
-        thread::sleep(Duration::from_secs(30));
+        thread::sleep(Duration::from_secs(15));
     }
 }

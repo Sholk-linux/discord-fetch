@@ -1,0 +1,12 @@
+[package]
+name = "discord-fetch"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+dirs = "6.0.0"
+discord-presence = "3.2.0"
+get-shell = "0.1.0"
+serde = "1.0.228"
+toml = "1.1.2"
+whoami = "2.1.2"

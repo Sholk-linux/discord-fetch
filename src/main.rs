@@ -7,7 +7,7 @@ use clap::Parser;
 #[derive(Parser)]
 #[command(
     name = "discord-fetch",
-    version = "0.1.0",
+    version = "0.2.0",
     about = "Like fastfetch, but for your Discord status",
     long_about = None
 )]

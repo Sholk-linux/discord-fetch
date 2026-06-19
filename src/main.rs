@@ -2,6 +2,20 @@ use whoami::{distro, desktop_env, platform};
 use discord_presence::Client;
 use std::{fs, thread, time::Duration};
 use serde::Deserialize;
+use clap::Parser;
+
+#[derive(Parser)]
+#[command(
+    name = "discord-fetch",
+    version = "0.1.0",
+    about = "Like fastfetch, but for your Discord status",
+    long_about = None
+)]
+
+struct Args {
+    #[arg(short, long, value_name = "FILE")]
+    config: Option<String>,
+}
 
 #[derive(Deserialize)]
 struct Config {
@@ -21,7 +35,11 @@ fn load_config() -> Result<Config, Box<dyn std::error::Error>> {
         Some(path) => path,
         None => return Err("Failed to find the folder for configs".into())
     };
-    let config_path = config_dir.join("discord-fetch").join("config.toml");
+    let args = Args::parse();
+    let config_path = match args.config {
+        Some(custom_path) => std::path::PathBuf::from(custom_path),
+        None => config_dir.join("discord-fetch").join("config.toml"),
+    };
     match config_path.try_exists() {
         Ok(true) => {
             let contents = fs::read_to_string(&config_path)?;
@@ -30,7 +48,9 @@ fn load_config() -> Result<Config, Box<dyn std::error::Error>> {
         }
         Ok(false) => {
             if let Some(parent) = config_path.parent() {
-                fs::create_dir_all(parent)?;
+                if !parent.as_os_str().is_empty() && !parent.exists() {
+                    fs::create_dir_all(parent)?;
+                }
             }
             let template = r#"#app_id for discord
 app_id = 123456789012345678
@@ -85,6 +105,12 @@ fn main() {
     drpc.on_ready(|_| println!("Discord is ready")).persist();
 
     drpc.start();
+    
+    ctrlc::set_handler(move || {
+        println!("\n[discord-fetch] Exiting the program... Bye!");
+        std::process::exit(0);
+    })
+    .expect("Error setting Ctrl+C handler");
 
     loop{
         let _ = drpc.set_activity(|act| {
@@ -95,7 +121,7 @@ fn main() {
                     assets
                         .large_image(&large_image)
                         .large_text(&large_text)
-    })
+                })
         });
         thread::sleep(Duration::from_secs(15));
     }
